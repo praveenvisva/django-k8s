@@ -1,0 +1,17 @@
+
+{% if result %}
+<table>
+    <tr>
+        <th>Id</th>
+        <th>Name</th>
+    </tr>
+    {% for res in result %}
+    <tr>
+        <th><a href="{% url 'students:detail' student.id %}">{{res.id}}</a></th>
+        <th>{{ res.name }}</th>
+    </tr>
+    {% endfor %}
+</table>
+{% else %}
+<p>No students are available.</p>
+{% endif %}

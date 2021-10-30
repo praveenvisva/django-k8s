@@ -1,0 +1,22 @@
+{% if student %}
+<table>
+    <tr>
+        <th>First Name</th>
+        <th>{{student.first_name}}</th>
+    </tr>
+        <tr>
+        <th>Last Name</th>
+        <th>{{student.last_name}}</th>
+    </tr>
+        <tr>
+        <th>Course</th>
+        <th>{{student.course}}</th>
+    </tr>
+        <tr>
+        <th>CGPA</th>
+        <th>{{student.cgpa}}</th>
+    </tr>
+</table>
+{% else %}
+<p> Student Not Available.</p>
+{% endif %}

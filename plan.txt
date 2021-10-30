@@ -1,13 +1,17 @@
-1. set up django-27-11-21
-2. connect to db-29-11-21
+1. set up django-27-11-21-done
+2. connect to db-29-11-21-done
 3. basic pages
 3. form to create student record
 4. list student records
-5. login/logout for admin
-6. pagination
-7. container files
-8. kubernetes files
-9. ssl,domain etc
-10 . move to cloud
+5. conver to django rest
+6. login/logout for admin
+7. pagination
+8. uwsgi etc
+8. container files
+9. kubernetes files
+10. ssl,domain etc
+11 . move to cloud
+
+kubenertes
 
 
