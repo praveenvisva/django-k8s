@@ -5,7 +5,7 @@
 4. list student records-done
 5. HTML CSS - 9/11/21
 5. convert to django rest-7/11/21
-6. login/logout for admin-2/11/21
+6. login/logout for admin-2/11/21-done
 7. pagination-4/11/21-done
 8. uwsgi etc-11/11/21
 8. container files-13/11/21

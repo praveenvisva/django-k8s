@@ -14,19 +14,12 @@ class Student(models.Model):
     sex = models.CharField(max_length=1, choices=GENDER_CHOICES)
     email = models.EmailField(blank=False, unique=True)
     permanent_address = models.TextField(max_length=700)
-    contact_number = PhoneNumberField(null=False, blank=False, unique=True)
-    date_of_joining = models.DateField('date joined')
-    date_of_leaving = models.DateField('date left')
-    cgpa = models.DecimalField(max_digits=3, decimal_places=2)
-    course = models.CharField(max_length=3, choices=COURSE_CHOICES)
-    sslc_percentage = models.DecimalField(max_digits=4, decimal_places=2)
-    hsc_percentage = models.DecimalField(max_digits=4, decimal_places=2)
 
     def __str__(self):
         return self.first_name
 
-    def was_a_9_pointer(self):
-        if self.cgpa > 9.0:
-            return True
-        else:
-            return False
+    # def was_a_9_pointer(self):
+    #     if self.cgpa > 9.0:
+    #         return True
+    #     else:
+    #         return False
