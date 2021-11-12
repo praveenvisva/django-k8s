@@ -5,11 +5,25 @@ from rest_framework import status
 from rest_framework.decorators import api_view
 from rest_framework.response import Response
 from rest_framework.views import APIView
-from rest_framework.authentication import SessionAuthentication,BasicAuthentication
+from rest_framework.authentication import SessionAuthentication,BasicAuthentication,TokenAuthentication
 from rest_framework.permissions import IsAuthenticated
+from rest_framework import viewsets
+from django.shortcuts import get_object_or_404
 
 from students.models import Student
 from students.serializers import StudentSerializer
+
+
+class StudentViewSet(viewsets.ModelViewSet):
+    serializer_class = StudentSerializer
+    queryset = Student.objects.all()
+
+# class StudentViewSet(viewsets.GenericViewSet,mixins.ListModelMixin,mixins.CreateModelMixin,
+#                      mixins.UpdateModelMixin,mixins.RetrieveModelMixin,mixins.DestroyModelMixin):
+#     serializer_class = StudentSerializer
+#     queryset = Student.objects.all()
+
+
 
 
 class GenericAPIView(generics.GenericAPIView, mixins.ListModelMixin, mixins.CreateModelMixin,
@@ -17,7 +31,8 @@ class GenericAPIView(generics.GenericAPIView, mixins.ListModelMixin, mixins.Crea
     serializer_class = StudentSerializer
     queryset = Student.objects.all()
     lookup_field = "id"
-    authentication_classes = [SessionAuthentication,BasicAuthentication]
+    #authentication_classes = [SessionAuthentication,BasicAuthentication]
+    authentication_classes = [TokenAuthentication]
     permission_classes = [IsAuthenticated]
 
     def get(self, request, id=None):
