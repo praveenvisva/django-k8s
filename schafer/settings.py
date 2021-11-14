@@ -79,7 +79,8 @@ DATABASES = {
         'NAME': 'student',
         'USER': 'root',
         'PASSWORD': 'cloud@123',
-        'HOST': 'localhost',
+        'HOST': 'db',
+        'PORT': '3306',
         'TIMEZONE': 'Asia/Kolkata'
     }
 }
